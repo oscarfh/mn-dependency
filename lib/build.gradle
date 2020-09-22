@@ -1,0 +1,26 @@
+plugins {
+	id "java-library"
+	id "maven"
+}
+
+version '0.0.1-SNAPSHOT'
+group "com.acme"
+
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	annotationProcessor platform("io.micronaut:micronaut-bom:$libMicronautVersion")
+	annotationProcessor "io.micronaut:micronaut-inject-java"
+	annotationProcessor "io.micronaut:micronaut-validation"
+	api platform("io.micronaut:micronaut-bom:$libMicronautVersion")
+	api "io.micronaut:micronaut-inject"
+	api "io.micronaut:micronaut-runtime"
+	api "javax.annotation:javax.annotation-api"
+	api "io.micronaut.security:micronaut-security"
+	runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+}
